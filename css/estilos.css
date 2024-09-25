@@ -1,0 +1,707 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background: #3e6337;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav {
+    background: #444;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para la sección */
+#cuales-drogas-hay {
+    padding: 40px 20px;
+    background: #333;
+    text-align: center;
+}
+
+/* Estilo del título */
+#cuales-drogas-hay h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+#cuales-drogas-hay h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: #1DB954; /* Color verde estilo Spotify */
+    margin: 10px auto;
+}
+
+/* Estilo del contenedor de las tarjetas */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Estilo de las tarjetas */
+.card {
+    background: #444;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 300px;
+    text-align: left;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagen de la tarjeta */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* Título de la tarjeta */
+.card h3 {
+    font-size: 1.5rem;
+    color: #1DB954;
+    margin: 15px;
+}
+
+/* Texto de la tarjeta */
+.card p {
+    font-size: 1rem;
+    color: white;
+    margin: 0 15px 15px;
+    line-height: 1.5;
+}
+
+/* Responsive: ajustar tarjetas en pantallas pequeñas */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+footer {
+    background: #3e6337;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+.facebook-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1877F2;
+    /* Color de fondo de Facebook */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transition: background-color 0.3s, filter 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.facebook-button:hover {
+    background-color: #145dbf;
+    /* Color más oscuro al pasar el ratón */
+    filter: brightness(0.9);
+    /* Cambia el brillo cuando se pasa el ratón */
+}
+
+.facebook-button svg {
+    width: 24px;
+    /* Tamaño del ícono dentro del botón */
+    height: 24px;
+    fill: white;
+    /* Color del ícono */
+}
+
+.instagram-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #F58529, #DD2A7B, #8134AF, #515BD4, #000000);
+    background-size: 200% 200%;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transition: background-position 0.5s, filter 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.instagram-button:hover {
+    background-position: 100% 0;
+    filter: brightness(0.9);
+    /* Cambia el brillo cuando se pasa el ratón */
+}
+
+.instagram-button svg {
+    width: 24px;
+    /* Ajusta el tamaño del ícono dentro del botón */
+    height: 24px;
+    fill: white;
+    /* Color del ícono */
+}
+
+.custom-button {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    background-color: #3e6337;
+    /* Color de fondo del botón */
+    padding: 15px 30px;
+    /* Espaciado interno */
+    border: none;
+    border-radius: 8px;
+    /* Bordes redondeados */
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.custom-button:hover {
+    background-color: #218838;
+    /* Color de fondo cuando se pasa el cursor */
+    transform: scale(1.05);
+    /* Aumentar ligeramente el tamaño */
+}
+
+.custom-button:active {
+    background-color: #1e7e34;
+    /* Color de fondo cuando se hace clic */
+    transform: scale(0.95);
+    /* Disminuir ligeramente el tamaño */
+}
+
+
+
+
+/* Estilos del encabezado de la carta */
+
+.carta-header {
+    background-color: #444;
+    color: white;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.carta-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+
+/* Estilos del cuerpo de la carta */
+
+.carta-body {
+    padding: 20px;
+    color: #333;
+}
+
+
+/* Estilos del pie de la carta */
+
+.carta-footer {
+    background-color: #444;
+    padding: 10px;
+    border-top: 1px solid #3e6337;
+}
+
+.carta-footer button {
+    background-color: #3e6337;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.carta-footer button:hover {
+    background-color: #3e6337;
+}
+
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    /* Tamaño del botón */
+    height: 70px;
+    /* Tamaño del botón */
+    border-radius: 50%;
+    background-color: #25D366;
+    /* Color de WhatsApp */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Sombra del botón */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.whatsapp-button img {
+    width: 30px;
+    /* Tamaño del logo dentro del botón */
+    height: auto;
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E;
+    /* Color de WhatsApp en hover */
+    transform: scale(1.1);
+    /* Efecto de zoom al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    /* Sombra más prominente al pasar el ratón */
+}
+
+
+/*boton de creadores */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Ajusta según la separación que desees del título */
+}
+
+.icon-button {
+    display: flex;
+    align-items: center; /* Alinea el ícono y el texto verticalmente */
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 20px; /* Espacio alrededor del ícono y el texto */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.icon-button i {
+    font-size: 30px;
+    color: white;
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+}
+
+.icon-button:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+.animated-text {
+    color: white; /* Color del texto */
+    font-size: 18px; /* Tamaño del texto */
+    animation: bounce 1s infinite; /* Aplica la animación de rebote */
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+
+
+/* Estilos del menú de navegación */
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 0;
+    background: linear-gradient(45deg, #444, #3e6337); /* Gradiente verde llamativo */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para destacar el nav */
+    border-radius: 8px;
+}
+
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-bar a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.3s ease;
+}
+
+.nav-bar a:hover:before {
+    left: 0;
+}
+
+.nav-bar a:hover {
+    color: #282828; /* Cambia el color al pasar el mouse */
+    transform: scale(1.1); /* Efecto de agrandar al pasar el mouse */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo sutil en hover */
+}
+
+
+
+/* Estilos del header */
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #3e6337, #3e6337); /* Gradiente verde */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Sombra para profundidad */
+    border-bottom: 3px solid #ffffff; /* Borde inferior para destacar */
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Logo del header */
+.header-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para resaltar el logo */
+    transition: transform 0.3s ease;
+}
+
+.header-logo:hover {
+    transform: scale(1.1); /* Efecto de agrandar al pasar el mouse */
+}
+
+/* Título del header */
+.header-title {
+    font-size: 2.5rem;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para el texto */
+    animation: float 3s infinite alternate; /* Animación sutil de movimiento */
+}
+
+/* Animación de flotar */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Efecto de luz deslizante */
+.main-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-45deg);
+    transition: left 0.7s ease;
+}
+
+.main-header:hover::after {
+    left: 150%;
+}
+
+
+
+/* Estilos del Hero */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(to bottom right, #444, #97db8a); /* Fondo degradado */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de fondo dinámico */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("img/paisaje.jpg") no-repeat center center/cover; /* Cambia por la ruta de tu imagen */
+    filter: brightness(0.5);
+    z-index: -1;
+    animation: zoomInOut 20s infinite alternate;
+}
+
+/* Animación de zoom del fondo */
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Título del Hero */
+.hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 3s ease-in-out;
+}
+
+/* Subtítulo del Hero */
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #eee;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 4s ease-in-out;
+}
+
+/* Botón CTA (Llamado a la acción) */
+.cta-button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    background: #1DB954;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /*transition: transform 0.3s, background 0.3s;*/
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button:hover {
+    background: #17a149;
+    transform: scale(1.1);
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Estilo de la sección con efecto parallax y animaciones */
+.section-que-es {
+    position: relative;
+    padding: 80px 20px;
+    color: #ffffff;
+    text-align: center;
+    background: url('img/addiction-bg.jpg') no-repeat center center/cover; /* Fondo con imagen parallax */
+    overflow: hidden;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5); /* Oscurece el fondo */
+}
+
+/* Overlay para el efecto parallax */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Contenido principal de la sección */
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Título animado */
+.animated-title {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #1DB954;
+    text-transform: uppercase;
+    animation: fadeInDown 1.5s ease-out both;
+}
+
+/* Animación de entrada */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo de la caja de resaltado */
+.highlight-box {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-left: 5px solid #1DB954;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: slideIn 1.2s ease-out both;
+}
+
+/* Cita con íconos */
+blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #eee;
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #1DB954;
+    animation: fadeIn 1.5s ease-out both;
+}
+
+/* Estilo del botón CTA */
+.cta-button {
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    color: #fff;
+    background: linear-gradient(45deg, #1DB954, #1AA34A);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Animaciones adicionales */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+/*Nosotros titulo animado*/
+
+#conoce-de-nosotros {
+    text-align: center; /* Centra el contenido dentro de la sección */
+}
+
+.animated-title {
+    display: inline-block;
+    animation: popIn 1s ease-in-out forwards;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+        color: #fff; /* Color inicial */
+    }
+    50% {
+        color: #3e6337; /* Cambia a un color llamativo */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        color: white; /* Color final */
+    }
+}
+
+
+

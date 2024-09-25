@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Música Brutal</title>
+    <link rel="stylesheet" href="css/pagina_de_relajacion.css">
+    <link rel="icon" href="img/logo .png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Iframe para el reproductor que se mantendrá constante -->
+    <iframe src="player.html" id="musicPlayer" style="position: fixed; bottom: 0; width: 100%; height: 100px; border: none;"></iframe>
+
+    <div class="content">
+        <h1>Musica Brutal</h1>
+        <div class="audio-container">
+            <p>Selecciona una canción para escuchar</p>
+
+            <!-- Lista de canciones -->
+            <ul class="song-list">
+                <li>🌅 Sol Maria</li>
+                <li>😎 Música 1</li>
+                <li>😵‍💫 Música 2</li>
+                <li>😵‍💫 Música 3</li>
+                <li>😵‍💫 Música 4</li>
+                <li>😵‍💫 Música 5</li>
+                <li>😵‍💫 Música 6</li>
+                <li>😵‍💫 Música 7</li>
+                <li>😵‍💫 Música 8</li>
+            </ul>
+        </div>
+        <button id="backButton" onclick="volverAlIndex()">Volver al Inicio</button>
+    </div>
+
+    <script>
+        function volverAlIndex() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

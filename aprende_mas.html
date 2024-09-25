@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información del Tema</title>
+    <link rel="stylesheet" href="css/aprende_mas.css">
+    <link rel="stylesheet" href="css/buttonStyles.css"> <!-- Vinculación del CSS del botón -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="img/logo .png" type="image/x-icon">
+</head>
+<body>
+    <iframe src="player.html" id="musicPlayer" style="position: fixed; bottom: 0; width: 100%; height: 100px; border: none;"></iframe>
+
+    <!-- Contenedor Principal -->
+    <div class="container">
+        <!-- Encabezado -->
+        <header class="header">
+            <h1>Adicciones</h1>
+            <p>Más informacion sobre el tema.</p>
+        </header>
+
+        <!-- Sección de Información -->
+        <section class="info-section">
+            <h2>Adicciones</h2>
+            <p>
+                La adicción es una enfermedad cerebral crónica caracterizada por la búsqueda y el uso compulsivo de una sustancia o la práctica de un comportamiento, a pesar de las consecuencias negativas. Se reconoce como un trastorno de control de impulsos y de la capacidad de tomar decisiones.
+            </p>
+            <h2>Que hace en el cerebro</h2>
+            <p>
+                El cerebro tiene un sistema de recompensa que se activa mediante la liberación de neurotransmisores como la dopamina, que están asociados con el placer y la satisfacción. En condiciones normales, este sistema de recompensa nos motiva a realizar actividades que son esenciales para la supervivencia, como comer o socializar.
+
+Sin embargo, las sustancias adictivas y ciertos comportamientos activan este sistema de manera excesiva, liberando grandes cantidades de dopamina y creando sensaciones de euforia. Con el tiempo, el cerebro se adapta a este exceso de dopamina y la persona necesita consumir más de la sustancia o realizar el comportamiento de manera repetida para obtener el mismo efecto, lo que lleva al desarrollo de la adicción.
+            </p>
+
+            <!-- Sección de Video Local -->
+            <div class="video-container">
+                <h3>Video para mas informacion</h3>
+                <!-- Reproduce un video local -->
+                <video width="100%" controls>
+                    <source src="videos/videoplayback.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+            </div>
+
+            <!-- Botón de Volver al Inicio -->
+            <button id="backButton" onclick="volverAlIndex()">Volver al Inicio</button>
+        </section>
+
+        <!-- Pie de Página -->
+        <footer class="footer">
+            <p>&copy; 2024 Información del Tema. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        function volverAlIndex() {
+            // Redirige a la página de inicio (index.html)
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

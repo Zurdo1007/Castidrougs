@@ -1,0 +1,70 @@
+body {
+    display: flex;
+    flex-direction: column; /* Permite apilar elementos verticalmente */
+    justify-content: center; /* Centra verticalmente el contenido */
+    align-items: center; /* Centra horizontalmente */
+    height: 100vh; /* Altura total de la ventana */
+    background-color: #333; /* Fondo gris claro */
+    margin: 0; /* Elimina el margen por defecto del body */
+}
+
+h1 {
+    margin-bottom: 20px; /* Espacio entre el título y el contenedor */
+    color: white; /* Color del texto */
+}
+
+.login-container {
+    display: flex; /* Utiliza flexbox para centrar el contenido */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    margin-top: 20px; /* Espacio desde el título */
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Apila los elementos del formulario verticalmente */
+    gap: 10px; /* Espacio entre los campos del formulario */
+    margin-bottom: 20px; /* Espacio entre el formulario y el botón */
+}
+
+input {
+    padding: 10px; /* Espaciado interno para los campos de entrada */
+    width: 250px; /* Ancho fijo */
+    border: 1px solid #ccc; /* Borde ligero */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+button {
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #28A745, #55B85A, #A4D65D, #D2E8A1); /* Gradiente en tonos de verde */
+    background-size: 300%; /* Para animar el fondo */
+    color: white; /* Texto blanco */
+    border: none;
+    border-radius: 5px; /* Bordes más redondeados */
+    font-size: 20px; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Texto en negrita */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para el botón */
+    transition: all 0.3s ease; /* Transición suave */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    outline: none; /* Quita el contorno al hacer clic */
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Desplazado hacia abajo */
+    animation: fadeInUp 0.8s forwards; /* Animación de entrada */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1; /* Hace que el botón sea visible */
+        transform: translateY(0); /* Regresa a su posición original */
+    }
+}
+
+button:hover {
+    background-position: 100%; /* Cambia la posición del fondo al pasar el mouse */
+    transform: scale(1.05); /* Aumenta el tamaño al pasar el mouse */
+}
+
+button:active {
+    transform: scale(0.95); /* Reduce el tamaño al hacer clic */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra reducida al hacer clic */
+}

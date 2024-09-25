@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información del Tema</title>
+    <link rel="stylesheet" href="css/aprende_mas.css">
+    <link rel="stylesheet" href="css/buttonStyles.css"> <!-- Vinculación del CSS del botón -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Contenedor Principal -->
+    <div class="container">
+        <!-- Encabezado -->
+        <header class="header">
+            <h1>Nombre del Tema</h1>
+            <p>Subtítulo o breve descripción del tema que se está presentando.</p>
+        </header>
+
+        <!-- Sección de Información -->
+        <section class="info-section">
+            <h2>Sobre el Tema</h2>
+            <p>
+                Aquí va la información principal sobre el tema. Puedes incluir datos importantes, descripciones, y cualquier otro contenido relevante que quieras resaltar.
+            </p>
+            <p>
+                Utiliza párrafos claros y concisos para mantener la atención del lector. Puedes destacar conceptos importantes con negritas o usar viñetas para listas.
+            </p>
+
+            <!-- Sección de Video Local -->
+            <div class="video-container">
+                <h3>Cortometraje Relacionado</h3>
+                <!-- Reproduce un video local -->
+                <video width="100%" controls>
+                    <source src="videos/videoplayback.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+            </div>
+
+            <!-- Botón de Volver al Inicio -->
+            <button id="backButton" onclick="volverAlIndex()">Volver al Inicio</button>
+        </section>
+
+        <!-- Pie de Página -->
+        <footer class="footer">
+            <p>&copy; 2024 Información del Tema. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        function volverAlIndex() {
+            // Redirige a la página de inicio (index.html)
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

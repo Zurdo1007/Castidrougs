@@ -1,0 +1,177 @@
+/* Estilo global inspirado en Spotify */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: #121212; /* Fondo oscuro */
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Contenedor principal */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+    background: #282828; /* Fondo oscuro con sombra */
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo del título */
+h1 {
+    color: #1DB954; /* Verde de Spotify */
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Contenedor del reproductor */
+.audio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Estilo del reproductor de audio */
+.audio-player {
+    border: none;
+    outline: none;
+    width: 320px;
+    background-color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    padding: 8px;
+    transition: transform 0.3s;
+}
+
+.audio-player::-webkit-media-controls-panel {
+    background-color: #282828; /* Estilo del panel */
+    border-radius: 20px;
+    color: #fff;
+}
+
+.audio-player::-webkit-media-controls-timeline {
+    background-color: #1DB954; /* Color de la línea de tiempo */
+    height: 5px;
+    border-radius: 2.5px;
+    transition: background-color 0.3s ease;
+}
+
+.audio-player::-webkit-media-controls-timeline::-webkit-media-controls-playback-rate-container {
+    display: none;
+}
+
+.audio-player:hover {
+    transform: scale(1.05);
+}
+
+/* Animación del tiempo de la música */
+.audio-player::-webkit-media-controls-current-time-display,
+.audio-player::-webkit-media-controls-time-remaining-display {
+    animation: timeAnimation 1s infinite alternate;
+    color: #206438;
+}
+
+/* Animación del tiempo */
+@keyframes timeAnimation {
+    0% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+/* Lista de canciones */
+.song-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.song-list li {
+    margin: 5px 0;
+    padding: 10px 20px;
+    background-color: #333;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: #1DB954;
+    text-align: left;
+}
+
+.song-list li:hover {
+    background-color: #1DB954;
+    transform: scale(1.05);
+    color: #fff;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo adicional para el texto */
+p {
+    color: #ddd;
+    font-size: 1.1rem;
+    animation: fadeIn 3s ease-in-out;
+}
+
+
+
+button {
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #28A745, #55B85A, #A4D65D, #D2E8A1); /* Gradiente en tonos de verde */
+    background-size: 300%; /* Para animar el fondo */
+    color: white; /* Texto blanco */
+    border: none;
+    border-radius: 5px; /* Bordes más redondeados */
+    font-size: 20px; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Texto en negrita */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para el botón */
+    transition: all 0.3s ease; /* Transición suave */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    outline: none; /* Quita el contorno al hacer clic */
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Desplazado hacia abajo */
+    animation: fadeInUp 0.8s forwards; /* Animación de entrada */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1; /* Hace que el botón sea visible */
+        transform: translateY(0); /* Regresa a su posición original */
+    }
+}
+
+button:hover {
+    background-position: 100%; /* Cambia la posición del fondo al pasar el mouse */
+    transform: scale(1.05); /* Aumenta el tamaño al pasar el mouse */
+}
+
+button:active {
+    transform: scale(0.95); /* Reduce el tamaño al hacer clic */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra reducida al hacer clic */
+}

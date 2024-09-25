@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total del elemento */
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina padding por defecto */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Establece la fuente de la página */
+    background: linear-gradient(135deg, #1db954, #191414); /* Degradado atractivo */
+    color: #ffffff; /* Color de texto blanco */
+    display: flex; /* Usamos flexbox para centrar */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Alto completo */
+}
+
+.container {
+    text-align: center; /* Centra el texto */
+}
+
+header {
+    margin-bottom: 30px; /* Márgenes inferiores */
+}
+
+h1 {
+    font-size: 3em; /* Tamaño de la fuente del título */
+    animation: fadeIn 0.5s ease-out; /* Animación de entrada */
+}
+
+p {
+    font-size: 1.2em; /* Tamaño de la fuente del párrafo */
+    color: #b3b3b3; /* Gris claro */
+}
+
+.info-container {
+    display: flex; /* Usamos flexbox para alinear los elementos */
+    justify-content: center; /* Centra los elementos */
+    flex-wrap: wrap; /* Permite que los elementos se muevan a la siguiente línea */
+    gap: 30px; /* Espacio entre las cartas */
+}
+
+.creator-card {
+    background: #282828; /* Fondo oscuro para las cartas */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espacio interno */
+    width: 250px; /* Ancho fijo para las cartas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra */
+    transition: transform 0.3s, background 0.3s; /* Transiciones para hover */
+    position: relative; /* Posicionamiento relativo para el efecto */
+}
+
+.creator-card:hover {
+    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+    background: #1db954; /* Cambia a verde al pasar el mouse */
+}
+
+.card-header {
+    display: flex; /* Usamos flexbox para alinear el título y botón */
+    justify-content: space-between; /* Espacio entre el título y el botón */
+    align-items: center; /* Centra verticalmente */
+}
+
+.creator-name {
+    font-weight: bold; /* Texto en negrita */
+    font-size: 1.5em; /* Tamaño de la fuente */
+}
+
+.info-button {
+    padding: 10px; /* Espacio interno del botón */
+    background: transparent; /* Sin fondo */
+    color: #fff; /* Color de texto blanco */
+    border: 2px solid #1db954; /* Borde verde */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 20px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: background 0.3s, color 0.3s; /* Transiciones para hover */
+}
+
+.info-button:hover {
+    background: #1db954; /* Verde Spotify al pasar el mouse */
+    color: #282828; /* Cambia el color del texto */
+}
+
+.creator-info {
+    display: none; /* Inicialmente oculto */
+    margin-top: 15px; /* Margen superior */
+    background: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+    padding: 10px; /* Espacio interno */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: opacity 0.3s ease; /* Transición suave */
+}
+
+.creator-info.visible {
+    display: block; /* Muestra la información del creador */
+    opacity: 1; /* Asegura que la opacidad sea 1 */
+}
+
+.index-button {
+    margin-top: 40px; /* Margen superior */
+    padding: 10px 20px; /* Espacio interno */
+    background: #1db954; /* Verde Spotify */
+    color: #fff; /* Color de texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 25px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: background 0.3s; /* Transición para hover */
+}
+
+.index-button:hover {
+    background: #1aa34a; /* Verde más oscuro al pasar el mouse */
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Opacidad inicial */
+        transform: translateY(20px); /* Desplazamiento hacia abajo */
+    }
+    100% {
+        opacity: 1; /* Opacidad final */
+        transform: translateY(0); /* Sin desplazamiento */
+    }
+}

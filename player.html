@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Música</title>
+    <link rel="stylesheet" href="css/playerestilo.css"> <!-- Enlace al archivo CSS -->
+</head>
+<body>
+
+    <div class="audio-player-container">
+        <button id="prevBtn">Anterior</button>
+        <audio id="audioPlayer" controls>
+            <source src="musica/Sol_maria.mp3" type="audio/mp3">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+        <button id="nextBtn">Siguiente</button>
+    </div>
+
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        const songList = [
+            "musica/Sol_maria.mp3", 
+            "musica/musica1.mp3", 
+            "musica/musica2.mp3", 
+            "musica/musica3.mp3", 
+            "musica/musica4.mp3",
+            "musica/musica5.mp3","musica/musica6.mp3","musica/musica7.mp3","musica/musica8.mp3",
+        ];
+        let currentIndex = 0;
+
+        // Función para cargar una canción
+        function loadSong(index) {
+            audioPlayer.src = songList[index];
+            audioPlayer.play();
+        }
+
+        // Función para la siguiente canción
+        function nextSong() {
+            currentIndex = (currentIndex + 1) % songList.length;
+            loadSong(currentIndex);
+        }
+
+        // Función para la canción anterior
+        function prevSong() {
+            currentIndex = (currentIndex - 1 + songList.length) % songList.length;
+            loadSong(currentIndex);
+        }
+
+        // Evento para el botón "Siguiente"
+        document.getElementById('nextBtn').addEventListener('click', nextSong);
+
+        // Evento para el botón "Anterior"
+        document.getElementById('prevBtn').addEventListener('click', prevSong);
+
+        // Reproduce la siguiente canción automáticamente al terminar la actual
+        audioPlayer.addEventListener('ended', nextSong);
+
+        // Cargar desde localStorage si hay una canción almacenada
+        window.onload = () => {
+            const savedSong = localStorage.getItem('currentSong');
+            const savedTime = localStorage.getItem('currentTime');
+            if (savedSong) {
+                audioPlayer.src = savedSong;
+                audioPlayer.currentTime = savedTime;
+                audioPlayer.play();
+            }
+        };
+
+        // Guardar en localStorage cuando cambie el tiempo de la canción
+        audioPlayer.addEventListener('timeupdate', () => {
+            localStorage.setItem('currentSong', audioPlayer.src);
+            localStorage.setItem('currentTime', audioPlayer.currentTime);
+        });
+    </script>
+
+</body>
+</html>
